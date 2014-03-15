@@ -1,8 +1,20 @@
 #!/bin/bash
 
+# Get an store IP in variable
+
+IP=$(ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
+
+# Install node dependencies
+
+apt-get -y install python-software-properties
+apt-get -y install python
+apt-get -y install g++
+apt-get -y install make
+apt-get -y install software-properties-common
+
 # Install Nodejs
 
-add-apt-repository ppa:chris-lea/node.js
+add-apt-repository -y ppa:chris-lea/node.js
 apt-get update
 apt-get -y install nodejs
 
@@ -17,7 +29,7 @@ apt-get -y install unzip
 
 # Unzip Ghost
 
-unzip ghost.zip
+unzip -uo ghost.zip -d ghost
 
 # Enter the Ghost directory
 
@@ -32,3 +44,6 @@ npm install --production
 npm start
 
 # Change configuration - TO DO(modify IP, port(2368 to 80), allow external access)
+
+sed -i '2368/80/g' config.js
+sed -i '127.0.0.1/$IP/g' config.js
