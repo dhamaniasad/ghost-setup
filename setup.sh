@@ -4,6 +4,10 @@
 
 IP=$(ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
 
+# Install screen
+
+apt-get -y install screen
+
 # Install node dependencies
 
 apt-get update
@@ -47,4 +51,9 @@ sed -i "s/127.0.0.1/$IP/g" /root/ghost/config.example.js
 
 # Start Ghost 
 
-npm start
+screen -d -m npm start
+
+# Announce
+
+echo 'Ghost has now been installed and setup. It has been started in a detached screen session. To list the running screens, use screen -ls command.\n'
+echo 'To finish installation, go to http://$IP/ghost'
