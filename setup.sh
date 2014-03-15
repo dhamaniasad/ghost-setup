@@ -6,6 +6,7 @@ IP=$(ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ pr
 
 # Install node dependencies
 
+apt-get update
 apt-get -y install python-software-properties
 apt-get -y install python
 apt-get -y install g++
