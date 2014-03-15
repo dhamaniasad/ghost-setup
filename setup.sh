@@ -42,8 +42,8 @@ npm install --production
 
 # Change configuration - TO DO(modify IP, port(2368 to 80), allow external access)
 
-sed -i 's/2368/80/g' config.js
-sed -i "s/127.0.0.1/$IP/g" config.js
+sed -i 's/2368/80/g' /root/ghost/config.js
+sed -i "s/127.0.0.1/$IP/g" /root/ghost/config.js
 
 # Start Ghost 
 
