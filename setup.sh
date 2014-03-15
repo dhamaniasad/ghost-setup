@@ -55,5 +55,5 @@ screen -d -m npm start
 
 # Announce
 
-echo 'Ghost has now been installed and setup. It has been started in a detached screen session. To list the running screens, use screen -ls command.\n'
-echo 'To finish installation, go to http://$IP/ghost'
+echo "Ghost has now been installed and setup. It has been started in a detached screen session. To list the running screens, use screen -ls command.\n"
+echo "To finish installation, go to http://$IP/ghost"
