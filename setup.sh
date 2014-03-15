@@ -46,4 +46,4 @@ npm start
 # Change configuration - TO DO(modify IP, port(2368 to 80), allow external access)
 
 sed -i '2368/80/g' config.js
-sed -i '127.0.0.1/$IP/g' config.js
+sed -i "127.0.0.1/$IP/g" config.js
