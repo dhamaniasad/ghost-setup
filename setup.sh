@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Install Nodejs
+
+add-apt-repository ppa:chris-lea/node.js
+apt-get update
+apt-get -y install nodejs
+
 # Download the latest Ghost release
 
 wget https://ghost.org/zip/ghost-latest.zip -O ghost.zip
